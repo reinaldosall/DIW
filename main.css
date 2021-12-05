@@ -1,0 +1,521 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0f0024), to(black));
+  background-image: linear-gradient(#0f0024, black);
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+#change {
+  display: none;
+  position: fixed;
+  color: #fff;
+  left: 10px;
+  top: 10px;
+  font-size: 26pt;
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #change {
+    display: block;
+  }
+}
+
+.r {
+  display: none;
+}
+
+.user {
+  width: 200px;
+  height: 100vh;
+  background-color: rgba(51, 51, 102, 0.1);
+  border-right: 1px solid #224;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user #nome {
+  font-size: 14pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.user #bio {
+  width: 80%;
+  text-align: center;
+  font-size: 18pt;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.user #avatar {
+  width: 60%;
+  border: 2px solid #ddd;
+  border-radius: 10px 0;
+}
+
+.user .follows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user .follows .following {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user .follows .following span {
+  text-align: center;
+  font-size: 10pt;
+}
+
+.user .follows .followers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user .follows .followers span {
+  text-align: center;
+  font-size: 10pt;
+}
+
+.user span {
+  margin-top: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 20px;
+  font-size: 10pt;
+}
+
+.user #bio {
+  border: 1px solid #777;
+  margin: 5px 20px;
+  font-size: 10pt;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  border-radius: 5px 20px;
+  max-height: 300px;
+}
+
+.user a {
+  text-decoration: none;
+}
+
+.user a:active {
+  text-decoration: none;
+}
+
+.user a .gitButton {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 10px 20px;
+  color: #fff;
+}
+
+.user a .gitButton:hover {
+  color: #b485ff;
+}
+
+.user a .gitButton i {
+  font-size: 27pt;
+}
+
+.user a .gitButton span {
+  font-size: 16pt;
+}
+
+.user .search {
+  width: 88%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 22px;
+  margin-top: 20px;
+}
+
+.user .search * {
+  border: none;
+}
+
+.user .search #searchText {
+  width: 80%;
+  padding: 0 5px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #fff;
+}
+
+.user .search #goSearch {
+  background-color: #fff;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 20%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.user .search #goSearch:hover {
+  color: #666;
+  cursor: pointer;
+}
+
+.user #searchResp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.user #searchResp a {
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10pt;
+  margin: 3px 0;
+}
+
+.user #searchResp a:active {
+  color: #fff;
+}
+
+.user #searchResp a:hover {
+  color: #a13dff;
+}
+
+@media only screen and (max-width: 650px) {
+  .user {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+  }
+  .user span {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .user #bio {
+    border: 1px solid #777;
+    margin: 5px 10px;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 8px 18px;
+    max-height: 300px;
+  }
+  .user .search {
+    height: 30px;
+  }
+  .user .search #searchText {
+    padding: 0 10px;
+  }
+}
+
+.repos {
+  color: #fff;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.repos .repHeader {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.repos .repHeader .repTitle {
+  font-size: 14pt;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.repos .repHeader #logout {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14pt;
+}
+
+.repos .repHeader #logout:hover {
+  color: #a11f1f;
+}
+
+.repos #repContent {
+  color: #fff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.repos #repContent .item {
+  margin: 10px;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(221, 221, 221, 0.103);
+  aspect-ratio: 2/1;
+}
+
+.repos #repContent .item p {
+  margin: 5px 20px;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.repos #repContent .item:hover {
+  cursor: pointer;
+  background-color: rgba(184, 6, 238, 0.26);
+}
+
+.repos #repContent .item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.repos #repContent .item a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+.repos #repContent .item a:hover {
+  color: #b485ff;
+}
+
+@media only screen and (max-width: 1500px) {
+  .repos #repContent .item {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .repos #repContent .item {
+    width: 45%;
+    aspect-ratio: 3/2;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .repos #repContent .item {
+    width: 90%;
+    aspect-ratio: 3/2;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .repos #repContent .repHeader {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    width: 50%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.login {
+  background-color: rgba(74, 74, 74, 0.308);
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login img {
+  width: 140px;
+  aspect-ratio: 1/1;
+}
+
+.login #nome {
+  color: #fff;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.login #gitUrl {
+  border: none;
+  background-color: #ddd3;
+  padding: 6px 20px;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.login #login {
+  margin-left: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font-size: 12pt;
+}
+
+.login #login:hover {
+  cursor: pointer;
+  color: #a95dff;
+}
+
+.login #login i {
+  font-size: 15pt;
+}
+
+.login #acess {
+  text-align: center;
+  color: #fff;
+}
+
+.login #acess i {
+  font-size: 14pt;
+}
+
+.login #acess:hover {
+  cursor: pointer;
+  color: #5858ff;
+}
+
+@media only screen and (max-width: 600px) {
+  .login {
+    background-color: rgba(74, 74, 74, 0.308);
+    width: 100%;
+    height: 50vh;
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */

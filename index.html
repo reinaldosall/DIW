@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/7339c6e983.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <i id="change" class="fas fa-arrow-right"></i>
+        <div class="user">
+            <span id="nome">nome</span><br>
+            <img src="https://i1.sndcdn.com/avatars-000475412136-0papup-t500x500.jpg" id="avatar">
+            <div class="follows">
+                <div class="following">
+                    <span>Seguindo</span>
+                    <span id="following">0</span>
+                </div>
+                <div class="followers">
+                    <span>Seguidores</span>
+                    <span id="followers">0</span>
+                </div>
+            </div>
+
+            <span>Bio</span>
+            <p id="bio">BIO</p>
+
+            <a href="" id="gitUrl">
+                <div class="gitButton">
+                    <i class="fab fa-github"></i><span>GitHub</span>
+                </div>
+            </a>
+            <div class="search">
+                <input type="text" id="searchText" placeholder="Pesquisar no Usuário">
+                <button id="goSearch"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div id="searchResp">
+
+            </div>
+        </div>
+        
+        <div class="repos" id="rep">
+            <div class="repHeader">
+                <span class="repTitle">Repositórios</span>
+                <a href="login.html" id="logout">Voltar <i class="fas fa-door-open"></i></a>
+            </div>
+            <div id="repContent">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

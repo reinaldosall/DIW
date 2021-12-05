@@ -1,0 +1,116 @@
+.repos {
+    color: #fff;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    flex: 1;
+    .repHeader {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+        align-self: flex-start;
+        .repTitle {
+            font-size: 14pt;
+            align-self: flex-start;
+        }
+        #logout {
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14pt;
+            &:hover {
+                color: #a11f1f;
+            }
+        }
+    }
+    #repContent {
+        color: #fff;
+        flex: 1;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        .item {
+            margin: 10px;
+            width: 30%;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+
+            background-color: rgba(221, 221, 221, 0.103);
+            aspect-ratio: 2/1;
+            p {
+                margin: 5px 20px;
+                text-align: center;
+                font-size: 10pt;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(184, 6, 238, 0.26);
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+                &:active {
+                    text-decoration: none;
+                    color: #fff;
+                }
+
+                &:hover {
+                    color: rgb(180, 133, 255);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .repos {
+        #repContent {
+            .item {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .repos {
+        #repContent {
+            .item {
+                width: 45%;
+                aspect-ratio: 3/2;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .repos {
+        #repContent {
+            .item {
+                width: 90%;
+                aspect-ratio: 3/2;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .repos {
+        #repContent {
+            .repHeader {
+                align-self: flex-end;
+                width: 50%;
+                justify-content: space-between;
+            }
+        }
+    }
+}

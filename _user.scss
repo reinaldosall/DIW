@@ -1,0 +1,185 @@
+.user {
+    #nome {
+        font-size: 14pt;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #bio {
+        width: 80%;
+        text-align: center;
+        font-size: 18pt;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+    width: 200px;
+    height: 100vh;
+    background-color: rgba(#336, 0.1);
+    border-right: 1px solid #224;
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    #avatar {
+        width: 60%;
+        border: 2px solid #ddd;
+        border-radius: 10px 0;
+    }
+
+    .follows {
+        display: flex;
+        width: 80%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        .following {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            span {
+                text-align: center;
+                font-size: 10pt;
+            }
+        }
+        .followers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            span {
+                text-align: center;
+                font-size: 10pt;
+            }
+        }
+    }
+
+    span {
+        margin-top: 20px;
+        align-self: flex-start;
+        margin-left: 20px;
+        font-size: 10pt;
+    }
+
+    #bio {
+        border: 1px solid #777;
+
+        margin: 5px 20px;
+        font-size: 10pt;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        border-radius: 5px 20px;
+        max-height: 300px;
+    }
+    a {
+        text-decoration: none;
+        &:active {
+            text-decoration: none;
+        }
+
+        .gitButton {
+            align-self: flex-start;
+            margin: 10px 20px;
+            color: #fff;
+
+            &:hover {
+                color: rgb(180, 133, 255);
+            }
+
+            i {
+                font-size: 27pt;
+            }
+            span {
+                font-size: 16pt;
+            }
+        }
+    }
+
+    .search{
+        width: 88%;
+        display: flex;
+        height: 22px;
+        *{
+            border: none;
+        }
+        $searchRadius: 30px;
+        $searchColor: #fff;
+        margin-top: 20px;
+        #searchText{
+            width: 80%;
+            padding: 0 5px;
+            border-top-left-radius: $searchRadius;
+            border-bottom-left-radius: $searchRadius;
+            background-color: $searchColor;
+        }
+        
+        #goSearch{
+            background-color: $searchColor;
+            border-top-right-radius: $searchRadius;
+            border-bottom-right-radius: $searchRadius;
+            width: 20%;
+            transition: 0.2s;
+            &:hover{
+                color: #666;
+                cursor: pointer;
+            }
+        }
+
+    }
+    #searchResp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+        a{
+            width: 100%;
+            color: #fff;
+            text-decoration: none;
+            font-size: 10pt;
+
+            margin: 3px 0;
+            &:active{
+                color: #fff;
+            }
+
+            &:hover{
+                color: rgb(161, 61, 255);
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 650px) {
+    .user{
+        width: 100vw;
+        height: 100vh;
+
+        border: none;
+        span{
+             align-self: center;
+         }
+         #bio {
+            border: 1px solid #777;
+    
+            margin: 5px 10px;
+            font-size: 10pt;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+            border-radius: 8px 18px;
+            max-height: 300px;
+        }
+        .search{
+            height: 30px;
+            #searchText{
+                padding: 0 10px;
+            }
+        }
+       
+
+    }
+
+}
